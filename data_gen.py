@@ -5,7 +5,7 @@ import paho.mqtt.client as mqtt
 def mqtt_publish(value,mqttc):
 
 	mqttc.publish('sensors/temperatura', \
-					payload='{ \"data\":'+str(time.time() - 10800)+', \"valor\":'+ str(value) +'}', \
+					payload='{ \"valor\":'+ str(value) +'}', \
 					qos=0, \
 					retain=False
 		)
@@ -17,13 +17,15 @@ try:
 	mqttc.loop_start()
 except:
 	print("Falha na conexao mqtt")
+	exit(1)
 
 try:
 	while True:
-		value = np.random.randn()* 100
-		print(value)
+		value = np.absolute(np.random.randn()* 90)
+		print('Enviando: ' + str(value) )
 		mqtt_publish(value,mqttc)
-		time.sleep(1)
+		time.sleep(2)
 
 except:
 	print("Encerrando...")
+	exit(1)
