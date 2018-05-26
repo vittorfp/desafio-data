@@ -21,7 +21,7 @@ except:
 
 try:
 	while True:
-		value = np.absolute(np.random.randn()* 90)
+		value = np.absolute(np.random.randn()* 150)
 		print('Enviando: ' + str(value) )
 		mqtt_publish(value,mqttc)
 		time.sleep(2)
