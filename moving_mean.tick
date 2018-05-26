@@ -1,0 +1,10 @@
+var mv_mean = batch
+    |query('''SELECT mean("valor") FROM "telegraf"."autogen".temperatura''')
+        .period(10s)
+        .every(2s)
+        .align()
+
+mv_mean
+    |influxDBOut()
+        .database('telegraf')
+        .measurement('moving_mean')
