@@ -1,3 +1,3 @@
-# Desafio Data Engeneering
+# Desafio Data Engineering
 
-Lorem ipsun dolor sit ammet, conscicteur adsplicit elit.
+Repositório que contêm os scripts utilzados no desenvolvimento do desafio Data Engineering.
