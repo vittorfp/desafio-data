@@ -14,8 +14,10 @@ def mqtt_publish(value,mqttc):
 try:
 	mqttc = mqtt.Client()
 	mqttc.connect("127.0.0.1", 1883, 60)
-	mqttc.loop_start()
+	mqttc.loop_start()	
+
 except:
+
 	print("Falha na conexao mqtt")
 	exit(1)
 
